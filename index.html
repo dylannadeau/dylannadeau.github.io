@@ -395,6 +395,13 @@
       color: var(--cream);
     }
 
+    .skill-tag.tapped {
+      background: rgba(201,168,76,0.18);
+      border-color: rgba(201,168,76,0.6);
+      color: var(--cream);
+      transform: scale(0.96);
+    }
+
     /* EXPERIENCE */
     #experience {
       background: var(--navy-mid);
@@ -682,7 +689,7 @@
     <div class="deco-corner br"></div>
     <div class="hero-deco-top"></div>
 
-    <p class="hero-badge">Director &middot; Data &amp; Analytics &middot; AI Strategist</p>
+    <p class="hero-badge">Product Manager &middot; Data Analyst &middot; AI Strategist</p>
 
     <h1 class="hero-name">
       Dylan
@@ -696,11 +703,10 @@
     </div>
 
     <p class="hero-title">
-      Building intelligent systems at the intersection of AI, data, and strategy.
+      Solving problems at the intersection of AI, data, and strategy.
     </p>
 
     <div class="hero-cta">
-      <a href="Resume_Nadeau_Dylan_202602.pdf" download class="btn-primary">Download R&eacute;sum&eacute;</a>
       <a href="#contact" class="btn-outline">Get in Touch</a>
     </div>
   </section>
@@ -711,8 +717,8 @@
       <div class="about-grid">
         <div class="about-text reveal">
           <p class="section-label">About</p>
-          <h2 class="section-title">Data Director.<br><em>AI Architect.</em></h2>
-          <p>I&rsquo;m a Director of Data &amp; Analytics at <strong>FTI Consulting</strong> in Boston, where I lead product strategy for enterprise AI &mdash; most notably as U.S. Product Lead for <strong>FTI Ariadne</strong>, a firm-wide LLM and RAG platform serving thousands of professionals.</p>
+          <h2 class="section-title">Product Manager.<br><em>AI Builder.</em></h2>
+          <p>I&rsquo;m a Product Manager at <strong>FTI Consulting</strong> in Boston, where I help lead product strategy for enterprise AI &mdash; most notably as U.S. Product Lead for <strong>FTI Ariadne</strong>, a firm-wide LLM and RAG platform serving thousands of professionals.</p>
           <p>My work spans product strategy, Python development, blockchain forensics, and go-to-market execution. I helped co-found the Boston office&rsquo;s AI Lab and have led <strong>300+ workshops</strong> on AI enablement.</p>
           <p>Outside of work, I&rsquo;ve run the Boston Marathon twice, read voraciously &mdash; with favorites from Anthony Doerr and Neil Postman &mdash; and spend my time learning the intricacies of food and wine.</p>
         </div>
@@ -761,6 +767,10 @@
             <span class="skill-tag">XGBoost</span>
             <span class="skill-tag">MLFlow</span>
             <span class="skill-tag">Prompt Engineering</span>
+            <span class="skill-tag">Claude Code</span>
+            <span class="skill-tag">Codex</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">Ollama</span>
           </div>
         </div>
         <div class="skill-category">
@@ -769,7 +779,6 @@
             <span class="skill-tag">AWS</span>
             <span class="skill-tag">Tableau</span>
             <span class="skill-tag">Power BI</span>
-            <span class="skill-tag">Asana</span>
           </div>
         </div>
         <div class="skill-category">
@@ -779,6 +788,7 @@
             <span class="skill-tag">Go-To-Market</span>
             <span class="skill-tag">GitLab</span>
             <span class="skill-tag">Technical Writing</span>
+            <span class="skill-tag">Asana</span>
           </div>
         </div>
         <div class="skill-category">
@@ -819,7 +829,7 @@
         </div>
         <div>
           <p class="exp-role">Data &amp; Analytics Director</p>
-          <p class="exp-desc">U.S. Product Lead for FTI Ariadne, a firm-wide LLM/RAG platform used by thousands of professionals. Lead product strategy, feature planning, and enablement across all business segments. Helped co-found the Boston office AI Lab. Develop Python and SQL-based models for clients across industries. Conduct blockchain forensic reviews and assist with crypto asset tracing worth $300M+.</p>
+          <p class="exp-desc">U.S. Product Lead for FTI Ariadne, a firm-wide LLM/RAG platform used by thousands of professionals. Help lead product strategy, feature planning, and enablement across all business segments. Helped co-found the Boston office AI Lab. Develop Python and SQL-based models for clients across industries. Conduct blockchain forensic reviews and assist with crypto asset tracing.</p>
           <div class="exp-highlights">
             <span class="exp-tag">AI Product</span>
             <span class="exp-tag">LLM / RAG</span>
@@ -857,13 +867,6 @@
           </div>
           <div class="link-arrow">&rarr;</div>
         </a>
-        <a href="mailto:dylan_nadeau@outlook.com" class="link-card">
-          <div>
-            <div class="link-name">Email</div>
-            <div class="link-type">dylan_nadeau&#64;outlook.com</div>
-          </div>
-          <div class="link-arrow">&rarr;</div>
-        </a>
       </div>
     </div>
   </section>
@@ -876,7 +879,6 @@
           <p class="section-label">Contact</p>
           <h2 class="section-title">Let&rsquo;s <em>Talk</em></h2>
           <p class="contact-text">Whether you&rsquo;re interested in AI strategy, data infrastructure, or just want to connect &mdash; I&rsquo;d love to hear from you.</p>
-          <div class="contact-email-display">dylan_nadeau&#64;outlook.com</div>
         </div>
         <form class="contact-form reveal" onsubmit="handleSubmit(event)">
           <div class="form-field">
@@ -929,6 +931,14 @@
         reveals[i].classList.add('visible');
       }
     }, 1500);
+
+    // Skill tag tap effect
+    document.querySelectorAll('.skill-tag').forEach(function(tag) {
+      tag.addEventListener('click', function() {
+        tag.classList.add('tapped');
+        setTimeout(function() { tag.classList.remove('tapped'); }, 350);
+      });
+    });
 
     // Contact form
     function handleSubmit(e) {
